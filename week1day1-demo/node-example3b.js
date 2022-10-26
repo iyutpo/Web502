@@ -1,4 +1,5 @@
-const rect = 
+var rect = require('./node-example3a.js');
+
 
 function solveRect(l, w) {
 console.log(`Solving for rectangle with dimensions: ${l}, ${w}`);
