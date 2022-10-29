@@ -1,0 +1,14 @@
+{
+  "name": "week1day1-homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server_task1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yinghai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
