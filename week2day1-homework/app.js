@@ -70,19 +70,15 @@ MongoClient.connect(url, {
     })
 
     // 4. insert one record to uscensus collection:
-    var one = {City: "Pacoima", Zip: 91331, State: "CA", Income: 60360, Age: 33};
-    dbo.collection('uscensus').insertOne(one, function(err, res) {
+    var two = [{'city': "Pacoima", 'zip': 91331, 'state': "CA", 'income': 60360, 'age': 33},
+                {'city': "Ketchikan", 'zip': 99950, 'state': "AK", 'income': 00000, 'age': 00}];
+    dbo.collection('uscensus').insertMany(two, function(err, res) {
         if (err) throw err;
-        console.log('1 document inseretd');
-    })
-    one = {City: "Ketchikan", Zip: 99950, State: "AK", Income: 00000, Age: 00};
-    dbo.collection('uscensus').insertOne(one, function(err, res) {
-        if (err) throw err;
-        console.log('1 document inseretd');
+        console.log('2 document inseretd');
     })
 
     // 5. query data:
-    var myquery = {state: /^CA/};
+    var myquery = {'state': /^CA/};
     dbo.collection('uscensus').find(myquery).toArray(function(err, result) {
         if (err) throw err;
         console.log(result);
