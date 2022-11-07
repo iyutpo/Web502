@@ -78,17 +78,34 @@ MongoClient.connect(url, {
     })
 
     // 5. query data:
-    var myquery = {'state': /^CA/};
+    var myquery = {'city': 'Corona'};
     dbo.collection('uscensus').find(myquery).toArray(function(err, result) {
         if (err) throw err;
-        console.log(result);
+        console.log('The result is: ' + result);
+    })
+
+    // 6. query california:
+    var myquery = {'state': 'CA'};
+    dbo.collection('uscensus').find(myquery).toArray(function(err, result) {
+        if (err) throw err;
+        console.log('California: ' + result);
+    })
+    
+    // 7. query update:
+    var myquery = {'state': 'AK'};
+    var newvalues = {$set: {'zip': 38910, 'age': 46}};
+    dbo.collection('uscensus').updateOne(myquery, newvalues, function(err, result) {
+        if (err) throw err;
+        console.log('1 docuement updated!');
         db.close();
     })
-    // var newvalues = {$set: {name: 'Mickey', address: 'Canyon 123'}};
-    // dbo.collection('customers').updateOne(myquery, newvalues, function(err, res) {
-    //   if (err) throw err;
-    //   console.log('1 document updated');
-    //   db.close();
-    // })
-})
+
+    // 8. sort ascendingly
+    var mysort = {'state': 1};
+    dbo.collection('uscensus').find().sort(mysort).toArray(function(err, result) {
+        if (err) throw err;
+        console.log('sorting result: ' + result);
+        db.close();
+    });
+});
 
