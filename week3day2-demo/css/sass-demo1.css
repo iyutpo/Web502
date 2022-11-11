@@ -1,0 +1,15 @@
+body {
+  font-family: "Open Sans", sans-serif; }
+
+h1, h2, h3 {
+  font-family: "Lobster", cursive; }
+
+h2 {
+  color: blue; }
+
+header h2 {
+  color: #cec8ff; }
+
+.site-footer {
+  background-image: linear-gradient(#cec8ff, white);
+  padding: 20px 0; }

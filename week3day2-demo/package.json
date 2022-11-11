@@ -14,7 +14,7 @@
   "author": "Your Name",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.3.0",
+    "lite-server": "^2.6.1",
     "node-sass": "^7.0.1",
     "onchange": "^3.3.0",
     "parallelshell": "^3.0.1"
