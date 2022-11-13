@@ -1,0 +1,58 @@
+/* Variables */
+$color1: rgb(218, 170, 14);
+$color2: rgb(127, 236, 55);
+$color3: rgb(255, 255, 255);
+$color4: rgb(213, 213, 216);
+$color5: rgb(170, 240, 113);
+$color6: rgb(58, 107, 212);
+$color7: rgb(49, 49, 48);
+$font1: Arial;
+$font2: Helvetica;
+$font3: Sans-Serif;
+$text1: 'Sancramento';
+$style1: cursive;
+
+/* Nest Main */
+main {
+    width: 1350px;
+    min-height:535px;
+}
+
+// Mixin or Extend for button
+@mixin signature {
+    font-family: $text1, $style1;
+    font-size: 2em;
+}
+
+@mixin body {
+    background-color: $color1;
+}
+
+@mixin main {
+    background-color: $color3;
+}
+
+@mixin section {
+    background-color: $color3;
+}
+
+@mixin button {
+    background-color: $color1;
+    color: $color3;
+    font-family: $font1;
+}
+
+@mixin h3 {
+    font-family: $font2;
+}
+
+@mixin navbar {
+    display: inline-block; 
+    color: $color3; 
+}
+
+@mixin a {
+    border-bottom: none !important;
+    text-decoration: none; 
+    color: $color3;
+}

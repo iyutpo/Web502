@@ -1,0 +1,17 @@
+/* Nest Nav */ /* Variables */
+/* Nest Main */
+main {
+  width: 1350px;
+  min-height: 535px;
+}
+
+#navbar {
+  overflow: hidden;
+}
+
+#signature {
+  font-family: "Sancramento", cursive;
+  font-size: 2em;
+}
+
+/*# sourceMappingURL=nav.css.map */

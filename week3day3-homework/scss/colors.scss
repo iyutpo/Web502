@@ -1,0 +1,81 @@
+@import "./styles.scss";
+
+body {
+    display: flex;
+    flex-direction: column;
+    @include body;
+}
+
+ul#navbar > li { 
+    @include navbar;
+}
+
+ul#navbar > li > a {
+    @include a;
+}
+
+main {
+    @include main;
+    position: relative;
+    top: 15%;
+    width: 106em;
+    max-width: auto;
+    display: flex;
+    flex: 1;
+}
+
+section#intro-text {
+    @include section;
+    width: 40%; 
+    float: left; 
+    max-width: 40%;
+    padding: 5px;
+    background-color: $color4;
+    margin: 10px 0px 10px 10px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+}
+
+section#intro-text div {
+    vertical-align: middle;
+    top: 60%;
+    text-align: center;
+    transform: translate(0, 50%);
+    padding: 5px;
+    margin-top: 3em;
+}
+
+
+section#intro-image {
+    @include section;
+    float: left;
+    margin: 10px 10px 10px 0px;
+}
+
+button {
+    @include button;
+    width: 10em;
+    height: 2em;
+    border-radius: 20%;
+    font-size: 1em;
+}
+
+footer {
+    flex: 0;
+}
+
+h3 {
+    @include h3;
+    font-size: 2.5em;
+}
+
+p {
+    @include h3;
+}
+
+#signature {
+    @include signature;
+}
+
+
