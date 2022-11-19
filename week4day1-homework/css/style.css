@@ -1,0 +1,31 @@
+.collection_text {
+  background-color: #fc2b2b9f;
+  color: aliceblue;
+  font-size: 3em;
+  text-align: center;
+}
+.about_main {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+.racing_shoes {
+  background-color: lightgrey;
+  margin-bottom: 4em;
+}
+.shoes-img3 img {
+  margin-left: 3em;
+}
+.sale_text {
+  color: #fc2b2b9f;
+}
+.number_text {
+  color: #fc2b2b9f;
+}
+.col-md-4 button {
+  background-color: #fc2b2b9f;
+}
+.copyright {
+  background-color: #fc2b2b9f;
+  text-align: center;
+  color: white;
+}
