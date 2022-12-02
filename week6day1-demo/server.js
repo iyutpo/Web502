@@ -37,6 +37,25 @@ passport.deserializeUser(function(id, cb) {
 // Create a new Express application.
 var app = express();
 
+const config = require('./config.js')
+var cookieParser = require('cookie-parser');
+app.use(cookieParser(config.cookieSecret));
+// set a cookie
+app.use(function(req, res, next) {
+  var cookie = req.cookies.cookieName;
+  if (cookie === undefined) {
+    var randomNumber = Math.random().toString();
+    randomNumber = randomNumber.substring(2, randomNumber.length);
+    res.cookie('cookieName', randomNumber, {maxAge: 60000, secure: false});
+    console.log('cookie created successfully', cookie);
+  } else {
+    console.log('cookie exists', cookie);
+  }
+  next();
+});
+app.use(express.static(__dirname + '/public'));
+
+
 app.get('/', function(req, res) {
   res.render('home', {
     user: req.user
@@ -58,7 +77,8 @@ app.post('/login', passport.authenticate('local', {failureRedirect: '/login'}),
 );
 
 app.get('/logout', function(req, res) {
-  req.logout();
+  // req.logout();
+  res.clearCookie('connect.sid');
   res.redirect('/');
 });
 
