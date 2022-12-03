@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+   <link rel="StyleSheet" href="css/styles.css" type="text/css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <header>
+    <nav>
+        <ul style="display: inline-block;">
+          <li><a href='./index.html'>Home</a></li>
+          <li>|</li>
+          <li><a href='#'>Blog</a></li>
+        </ul>
+        <ul style="display: inline-block;">
+          <li><a href="./register.html">Register</a></li>
+        </ul>
+      </nav>
+    </header>
+   
+   <main>
+
+    <section id="intro-text">
+
+        <span>Simple Kitchen</span>
+    
+        <h3>Simple &amp; Comforting <br>
+            Recipes All Year Round</h3>
+    
+    
+        <p>Pan-seared chicken, Grill shrimp, mac & cheese—need we say more?</p>
+
+        <!--<p class="success">SUCCESS</p>
+        <p class="error">ERROR</p>
+        <p class="warning">WARNING</p>-->
+        
+
+    </section>
+
+    <section id="registration-form" style="text-align: center;">
+        <h3  style="margin-left: 40em; margin-right: 10em; text-align: center;" class="success" id="success-message"></h3>
+        <div style="margin-left: 40em; margin-right: 10em;" id="register-form">
+            <p class="error" id="error-message"></p>
+            <h3>Register to subscribe</h3>
+            <br>
+            <br>
+            <span>Name: </span><br>
+            <input type="text" id="register-name"> <br> <br>
+            <span>Email: </span><br>
+            <input type="text" id="register-email"> <br><br>
+            <span>Username: </span><br>
+            <input type="text" id="register-username"><br><br>
+            <span>Password: </span><br>
+            <input type="text" id="register-password"><br>
+
+            <button class="submit-button" onclick="registerButtonOnClick()" style="cursor: pointer;">Register</button><br>
+        </div>
+    </section>
+    
+    </main>
+    
+    <footer>
+        &copy; Copyright 2021
+    </footer>
+   
+  </body>
+
+  <script>
+    function registerButtonOnClick() {
+        var register_name = document.getElementById("register-name").value;
+        var register_email = document.getElementById("register-email").value;
+        var success = document.getElementById("success-message");
+        var error = document.getElementById('error-message');
+        console.log(register_name + '----' + register_email + typeof(register_name));
+        
+        if (register_email == '' && register_name == '') {
+            error.innerHTML = '!Error: Please enter a name and an email';
+        } else if (register_email == '') {
+            error.innerHTML = '!Error: Please enter an email';
+        } else if (register_name == '') {
+            error.innerHTML = '!Error: Please enter a name';
+        } else {
+            document.getElementById('register-form').style.display = 'none';
+            success.innerHTML = 'Thank you for your registration!';
+        }
+
+        var MongoClient = require('mongodb').MongoClient;
+        var url = "mongodb://localhost:27017/";
+
+        MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+            var dbo = db.db("users");
+            var myobj = { name: register_name, email: register_email};
+            dbo.collection("customers").insertOne(myobj, function(err, res) {
+                if (err) throw err;
+                console.log("1 document inserted");
+                db.close();
+            });
+        });
+    }
+
+    
+    
+
+  </script>
+
+</html>
