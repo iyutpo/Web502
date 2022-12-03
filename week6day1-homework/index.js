@@ -86,6 +86,10 @@ app.get('/logout', (req, res) => {
 });
 
 
+// REGISTER SOME USERS
+UserDetails.register({username: 'paul', active: false}, 'paul');
+UserDetails.register({username: 'joy', active: false}, 'joy');
+UserDetails.register({username: 'ray', active: false}, 'ray');
 
 
 
