@@ -6,7 +6,7 @@ function Home() {
     return (
         <div className='home'>
             <div className="home__container">
-                <img className='home__image' src='https://images-eu.ssl-images-amazon.com/images/G/31/prime/Gateway/2020/May/gaming_1500x600._CB431281464_.jpg' alt=''></img>
+                <img className='home__image' src='https://www.plotprojects.com/wp-content/uploads/2022/08/flipp-app-local-deals.jpg' alt=''></img>
             <div className='home__row'>
 
                 <Product id='392193' name='Apple iPhone 11 (128GB) - Black ' image='https://images-na.ssl-images-amazon.com/images/I/51kGDXeFZKL._SL1024_.jpg'

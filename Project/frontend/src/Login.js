@@ -19,6 +19,7 @@ function Login() {
 
     const register = e => {
         e.preventDefault();
+        console.log('register function called');
 
         auth.createUserWithEmailAndPassword(email, password).then((auth) => {
                 // it successfully created a new user with email and password
