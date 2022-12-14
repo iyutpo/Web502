@@ -16,7 +16,7 @@ function Header() {
     return (
         <div className='header'>
         <Link to='/'>
-            <img className='header__icon' src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt=''></img>
+            <img className='header__icon' src='https://cdn-icons-png.flaticon.com/512/337/337191.png' alt=''></img>
         </Link>
         <div className='header__searchbar'>
             <input type='text'></input>
@@ -41,13 +41,13 @@ function Header() {
                 </p>
             </div>
             </Link>
-            <div className='header__link'>
+            {/* <div className='header__link'>
                 <p>
                     <small>Your</small>
                     <br></br>
                     <strong>Prime</strong>
                 </p>
-            </div>
+            </div> */}
             <Link to='/checkout'>
                 <div className='header__link'>
                     <p>

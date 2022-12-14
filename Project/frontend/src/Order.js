@@ -35,7 +35,7 @@ function Order({order}) {
                 }
                 displayType={"text"}
                 thousandSeparator={true}
-                prefix={"₹"}/>
+                prefix={"$"}/>
 
         </div>
     )

@@ -47,13 +47,14 @@
 }
 
 .login__signInButton {
-  background: #f0c14b;
+  background: #17b7e6;
   border-radius: 2px;
   width: 100%;
   height: 30px;
   border: 1px solid;
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
+  cursor: pointer;
 }
 
 .login__registerButton {
@@ -63,4 +64,5 @@
   border: 1px solid;
   margin-top: 10px;
   border-color: darkgray;
+  cursor: pointer;
 }
