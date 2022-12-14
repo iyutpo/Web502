@@ -93,8 +93,8 @@ function Payment() {
           </div>
           <div className="payment__address">
             <p>{user?.email}</p>
-            <p>Demo Street, Kodakara</p>
-            <p>Kerala-123456</p>
+            <p>What a Street, California</p>
+            <p>Yinghai-12345</p>
           </div>
         </div>
         <div className="payment__section">
